@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To start with, you must launch the system via
 
-Things you may want to cover:
+`docker-compose up`
 
-* Ruby version
+This will run the create-app.sh script and ensure that the app folder is initialized with a barebones rails app.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The .env file contains a variety of variables which govern the initialization of the system and ensures that the db credentials are appropriately configured. These defaults may change from time to time, especially the db name which for the base rails template seems to be currently hard-coded to app_development.
