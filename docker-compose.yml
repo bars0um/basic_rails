@@ -1,0 +1,27 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:12
+    env_file:
+      - .env
+
+  web:
+    stdin_open: true
+    #tty: true
+    build:
+      context: .
+    env_file:
+      - .env
+    #container_name: rails_web_1
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      postgres:
+        condition: service_started
+    volumes:
+      - .:/app:delegated
+      - ./docker/web1:/app/tmp:delegated
+    ports:
+      - "3000:3000"
+    command: bash -c "bundle install && bundle exec puma -C config/puma.rb"
+
