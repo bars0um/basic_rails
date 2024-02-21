@@ -1,5 +1,7 @@
 # README
 
+This is a boiler-plate for quickly standing up a rails-based development setup.
+
 To start with, you must launch the system via
 
 `docker-compose up`
